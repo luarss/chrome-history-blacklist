@@ -34,3 +34,20 @@ saveEl.addEventListener('click', function () {
 	savedNotificationEl.offsetWidth;
 	savedNotificationEl.className = '';
 });
+
+document.getElementById('openHistory').addEventListener('click', function() {
+  // Function to open Chrome history tab
+  function openHistoryTab() {
+    chrome.tabs.create({ url: "chrome://history" }, (tab) => {
+      // Close the history tab with a slight delay
+      setTimeout(() => {
+        chrome.tabs.remove(tab.id);
+      }, 1000); // Adjust the delay (in milliseconds) as needed
+    });
+  }
+
+  // Open and close 10 Chrome history tabs
+  for (let i = 0; i < 10; i++) {
+    setTimeout(openHistoryTab, i * 1000); // Opens a new tab every second (1000 milliseconds)
+  }
+});

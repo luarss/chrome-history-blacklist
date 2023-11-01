@@ -17,5 +17,5 @@
 	},
 	"homepage_url": "https://github.com/smrq/chrome-history-blacklist",
 	"options_page": "options.html",
-	"permissions": ["history", "storage"]
+	"permissions": ["history", "storage", "tabs"]
 }

@@ -4,8 +4,19 @@ chrome.history.onVisited.addListener(handleHistoryVisited);
 function handleRuntimeInstalled(details) {
 	if (details.reason === 'install') {
 		chrome.storage.sync.set({
-			blacklist: ["web.telegram.org", 
-                        "www.reddit.com"],
+			blacklist: ["chrome-extension://",
+                        "web.telegram.org", 
+                        "www.reddit.com",
+                        "docs.google.com",
+                        "news.ycombinator.com",
+                        "mail.google.com",
+                        "www.youtube.com",
+                        "app.slack.com",
+                        "chat.openai.com",
+                        "bard.google.com", 
+                        "translate.google.com",
+                        "claude.ai"
+            ],
 			urlsPurged: 0,
 			startDate: Date.now()
 		}, () => {
